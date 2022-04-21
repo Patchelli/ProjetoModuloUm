@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background: #303030;
+    background-image: url("/image/vitory.jpg");
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+/**CSS - WELCOME - BEGIN***/
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome h1 {
+    font-family: 'Bilbo', cursive;
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Source Code Pro', monospace;
+    color: #d2d22ad4;
+}
+
+/**CSS - WELCOME - END***/
+
+/**CSS - Sub - BEGIN***/
+.sub {
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.sub p {
+    color: #ffffff;
+}
+
+/**CSS - Sub - END***/
+
+/****CSS CARD - BEGIN ******/
+
+.character {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    margin-right: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    clip-path: polygon(90% 0, 100% 7%, 100% 100%, 0 100%, 0 0);
+}
+
+.card:hover {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+
+.card img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    transition: inherit;
+}
+
+.card:hover img {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.card span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #061c25;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 20px;
+    transform: inherit;
+}
+
+
+.card:hover span {
+    padding: 10px;
+    background: #006680;
+
+}
+
+/****CSS CARD - END ******/
