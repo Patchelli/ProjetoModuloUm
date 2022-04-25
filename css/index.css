@@ -6,7 +6,7 @@
 
 body {
 
-    background: #303030;
+    background: #272a;
     background-image: url("/img/vitory.jpg");
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -106,23 +106,3 @@ body {
 }
 
 /****CSS CARD - END ******/
-
-
-input[type=checkbox] {
-    position: absolute;
-    cursor: pointer;
-    width: 0px;
-    height: 0px;
-  }
-  
-  input[type=checkbox]:checked:before {
-        content: "";
-    display: block;
-    position: absolute;
-    width: 34px;
-    height: 34px;
-    border: 4px solid #FFCB9A;
-    border-radius: 20px;
-    background-color: #445768;  
-    transition: all 0.2s linear;
-  }
