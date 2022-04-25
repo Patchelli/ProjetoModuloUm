@@ -2,10 +2,10 @@
 //     confirm("Após longo seis meses, você cumpriu sua missão nesse projeto. Agora é a hora de mostrar que atingiu a superioridade na programação.")
 //     confirm("Escolha um pesrsonagem")
 // }, 200);
-// var today = new Date();
-// var date = today.getFullYear();
-// document.getElementById("currentDate").innerHTML = date;
-// declaração de variáveis
+var today = new Date();
+var date = today.getFullYear();
+document.getElementById("currentDate").innerHTML = date;
+
 const question = document.querySelector('#question');
 const answerBox = document.querySelector('#answers-box');
 const quizzContainer = document.querySelector('#quizz-container');
@@ -125,17 +125,16 @@ function checkAnswer(btn) {
     nextQuestion();
 }
 
-
 function nextQuestion() {
-
     setTimeout(function () {
 
-        return actualQuestion >= questions.length ? showSuccessMessage() : ""
-
+        if (actualQuestion >= questions.length) {
+            showSuccessMessage();
+            return;
+        }
         createQuestion(actualQuestion);
     }, 1200);
 }
-
 
 
 function showSuccessMessage() {
@@ -144,14 +143,23 @@ function showSuccessMessage() {
     const score = ((points / questions.length) * 100).toFixed(2);
     const displayScore = document.querySelector('#display-score span');
     displayScore.textContent = score.toString();
-    
+
     const correctAnswers = document.querySelector('#correct-answers');
     correctAnswers.textContent = points;
-    
+
     const totalQuestions = document.querySelector('#questions-qty');
     totalQuestions.textContent = questions.length;
 
     setTimeout(() => {
-        score >= 7 ? window.location.href("win.html") : window.location.href("over.html")
-    }, 200);
+    score >= 7?window.location.assign("win.html"):window.location.assign("over.html")
+    }, 1600);
+
 }
+
+
+function hideOrShowQuizz() {
+    quizzContainer.classList.toggle('hide');
+    scoreContainer.classList.toggle('hide');
+}
+
+init();
