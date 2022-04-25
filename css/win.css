@@ -1,0 +1,103 @@
+body{
+    font-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/img/win.gif")
+}
+
+name{
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(165, 139, 22);
+    font-weight: 500;
+    font-size: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.fim{
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.fim2{
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(253, 251, 250);
+    font-weight: 500;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;    
+}
+
+botao1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 200px;
+}
+
+.botao{
+    background-color: black;
+    color: aliceblue;
+    width: 150px;
+    height: 60px;
+    border:none;
+    box-shadow: 4px 5px 4px rgb(47, 72, 94);
+    border-radius:25px;
+}
+
+.botao:hover{
+    background-color: rgb(94, 22, 13);
+}
+
+
+.titulo{
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(139, 117, 16);
+    font-weight: 500;
+    font-size: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+
+
+.escrito1{
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.escrito2{
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(253, 251, 250);
+    font-weight: 500;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;    
+}
