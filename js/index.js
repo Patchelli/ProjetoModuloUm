@@ -1,7 +1,3 @@
-// setTimeout(() => {
-//     confirm("Após longo seis meses, você cumpriu sua missão nesse projeto. Agora é a hora de mostrar que atingiu a superioridade na programação.")
-//     confirm("Escolha um pesrsonagem")
-// }, 200);
 var today = new Date();
 var date = today.getFullYear();
 document.getElementById("currentDate").innerHTML = date;
@@ -36,6 +32,7 @@ const questions = [{
             },
         ],
     },
+    
     {
         question: 'Qual o seletor de id no CSS?',
         peso: 2,
@@ -53,6 +50,174 @@ const questions = [{
             },
             {
                 answer: '/',
+                correct: false,
+            },
+        ],
+    },
+    {
+        question: 'Na linguagem JavaScript, ao invocar o método getElementsByClassName, do objeto document, será retornado:',
+        peso: 2,
+        answers: [{
+                answer: 'Um objeto.',
+                correct: false,
+            },
+            {
+                answer: 'Uma função.',
+                correct: false,
+            },
+            {
+                answer: 'Um valor numérico.',
+                correct: false,
+            },
+            {
+                answer: 'Um array.',
+                correct: true,
+            },
+        ],
+    },
+    {
+        question: 'Em JavaScript, o operador new cria e inicializa um novo objeto.Qual operador NÃO representa a criação de um objeto de tipo nativo JavaScript?',
+        peso: 2,
+        answers: [{
+                answer: 'var o = new Object(); ',
+                correct: false,
+            },
+            {
+                answer: 'var l = new ArrayList();',
+                correct: true,
+            },
+            {
+                answer: 'var a = new Array();',
+                correct: false,
+            },
+            {
+                answer: 'var d = new Date();',
+                correct: false,
+            },
+        ],
+    },
+    {
+        question: 'Ao presenciar uma cena de bulling qual a melhor forma de agir?',
+        peso: 2,
+        answers: [{
+                answer: 'Bater nos dois',
+                correct: false,
+            },
+            {
+                answer: 'Fingir de cego e mudo',
+                correct: false,
+            },
+            {
+                answer: 'Socar o agressor',
+                correct: false,
+            },
+            {
+                answer: 'Conversar com o agressor sobre empatia',
+                correct: true,
+            },
+        ],
+    },
+    {
+        question: 'Thom está explicando algum conteudo importante, o que fazer nesse momento?',
+        peso: 2,
+        answers: [{
+                answer: 'Desmutar o mic e começar a cantar',
+                correct: false,
+            },
+            {
+                answer: 'Fazer performace frente camera',
+                correct: false,
+            },
+            {
+                answer: 'Prestar atenção e possivel fazer anotações',
+                correct: true,
+            },
+            {
+                answer: 'Sai da chamada',
+                correct: false,
+            },
+        ],
+    },
+    {
+        question: 'Baby Inara está com duvidas sobre Closures, o que fazer? ',
+        peso: 2,
+        answers: [{
+                answer: 'Explicar passo a passo com paciencia ',
+                correct: true,
+            },
+            {
+                answer: 'Ignorar sua duvida',
+                correct: false,
+            },
+            {
+                answer: 'Mandar baby Inara brincar la fora e sair da frente do pc',
+                correct: false,
+            },
+            {
+                answer: 'Fingir ser surdo',
+                correct: false,
+            },
+        ],
+    },
+    {
+        question: 'Em javascript, o que faz a função Math.round()?',
+        peso: 2,
+        answers: [{
+                answer: 'Retorna o valor decimal, mais próximo.  ',
+                correct: false,
+            },
+            {
+                answer: 'Retorna o valor de um número arredondado para o inteiro, mais próximo.',
+                correct: true,
+            },
+            {
+                answer: 'Retorna o valor de um número arredondado para o inteiro, logo abaixo.',
+                correct: false,
+            },
+            {
+                answer: 'Retorna o valor de um número arredondado para o inteiro, mais próximo.',
+                correct: false,
+            },
+        ],
+    },
+    {
+        question: 'Considere as expressões em javascript a seguir:var a1=true && true; var a2=true && false; var a3=false && true; var o1=true||true; var o2=false||true; var n2 = !false; var n3 = !"Gato"; os valores retornados serão:',
+        peso: 2,
+        answers: [{
+                answer: 'true, false, false, true, true, true, false.',
+                correct: true,
+            },
+            {
+                answer: 'false, false, true, true, false, true, false.',
+                correct: false,
+            },
+            {
+                answer: 'true, true, true, true, false, false, true',
+                correct: false,
+            },
+            {
+                answer: 'false, false, true, true, true, false, false.',
+                correct: false,
+            },
+        ],
+    },
+    {
+        question: 'Considere a função xpto em código JavaScript.  function xpto (s) {      let text = ""      for (const x of s) {          text = x + text;      }      return text;  } A expressão                                 xpto("banana" + "laranja") retorna:',
+        peso: 2,
+        answers: [{
+                answer: 'lbaarnaannjaa ',
+                correct: false,
+            },
+            {
+                answer: 'banalaranja ',
+                correct: false,
+            },
+            {
+                answer: 'ajnaralananab',
+                correct: true,
+            },
+            {
+                answer: 'ajnaralananab',
                 correct: false,
             },
         ],
@@ -99,29 +264,27 @@ function createQuestion(i) {
         answerBox.appendChild(answerTemplate);
 
 
-
+        
         answerTemplate.addEventListener('click', function () {
             checkAnswer(this);
         });
     });
-
-
+    
+    
     actualQuestion++;
 }
 
 function checkAnswer(btn) {
+
     const buttons = answerBox.querySelectorAll('button');
     buttons.forEach((button) => {
         if (button.getAttribute('correct-answer') == 'true') {
             button.classList.add('correct-answer');
             btn === button ? points++ : ""
-
         } else
             button.classList.add('wrong-answer');
 
     });
-
-
     nextQuestion();
 }
 
@@ -151,7 +314,8 @@ function showSuccessMessage() {
     totalQuestions.textContent = questions.length;
 
     setTimeout(() => {
-    score >= 7?window.location.assign("win.html"):window.location.assign("over.html")
+        score >= 70 ? alert("Mantenha Assim") : alert("Você Precisa Estudar Mais")
+        score >= 70 ? window.location.assign("win.html") : window.location.assign("over.html")
     }, 1600);
 
 }
